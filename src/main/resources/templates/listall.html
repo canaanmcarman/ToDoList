@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div th:replace="base :: navlinks"></div>
+
+
+    <div class="row">
+        <div th:each="toDo: ${toDoList}">
+                <div class="card" style="width: 18rem;">
+                    <img th:src="${toDo.pic}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">[[${toDo.name}]]</h5>
+                        <p class="card-text">[[${toDo.description}]]</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">([[${toDo.priority}]]) priority</li>
+                        <li class="list-group-item">Due on [[${toDo.dueDate}]]</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
